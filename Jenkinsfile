@@ -17,6 +17,7 @@ try {
 slackSend channel: '#july-devops', color: 'good', message: "Success ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|JenkinsUrl>)", teamDomain: 'sspcloudpro', tokenCredentialId: 'tokensspslack', username: 'sspcloudpro'
 } catch(Exception ex) {
          println("Catching the exception");
+         exit 1
          slackSend channel: '#july-devops', color: 'bad', message: 'Failed ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)', teamDomain: 'sspcloudpro', tokenCredentialId: 'tokensspslack', username: 'sspcloudpro'
       }
 
