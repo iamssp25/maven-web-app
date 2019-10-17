@@ -12,7 +12,7 @@ try {
 }
   stage('Deploy') {
     sh "cd ${WORKSPACE}/target"
-    sh "sudo cp sspcloudproweb.war /home/ec2-user/tomcat8/webapps/"
+    sh "sudo cp ${WORKSPACE}/target/sspcloudproweb.war /home/ec2-user/tomcat8/webapps/"
   }
 slackSend channel: '#july-devops', color: 'good', message: "Success ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|JenkinsUrl>)", teamDomain: 'sspcloudpro', tokenCredentialId: 'tokensspslack', username: 'sspcloudpro'
 } catch(Exception ex) {
