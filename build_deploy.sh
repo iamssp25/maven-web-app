@@ -7,3 +7,4 @@ echo "Deplohing the project into Apache tomcat"
 cd $WORKSPACE
 cp target/sspcloudproweb.war /usr/local/tomcat8/webapps/
 
+
